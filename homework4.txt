@@ -1,0 +1,2 @@
+when status code is 301 go to Location header and Get request the location then show the body
+if status code is 200 show the body
