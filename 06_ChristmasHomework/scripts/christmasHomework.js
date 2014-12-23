@@ -10,5 +10,6 @@ $(document).ready(function() {
 
 	$("#menu-top-level-menu li a").last().click(function() {
 		alert("hello world");
+		$("#col2").insertBefore($("#col1"));
 	});
 });
