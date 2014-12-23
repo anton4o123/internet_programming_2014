@@ -45,6 +45,11 @@ $(document).ready(function() {
 			return;
 		}
 		$("input#textinput").val("");
+		$.post("http://jsonplaceholder.typicode.com/posts", {
+			userId: 1,
+			title: name,
+			body: ''
+		});
 	};
 	$("button#addbutton").click(checkForText);
 });
