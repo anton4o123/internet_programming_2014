@@ -7,4 +7,8 @@ $(document).ready(function() {
 	$("div#dynamiccontent").append($("<input/>").attr("id", "textinput"));
 	$("div#dynamiccontent").append($("<button/>").attr("id", "addbutton"));
 	$("div#dynamiccontent").append($("<ul/>").attr("id", "posts"));
+
+	$("#menu-top-level-menu li a").last().click(function() {
+		alert("hello world");
+	});
 });
