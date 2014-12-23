@@ -4,4 +4,5 @@ $(document).ready(function() {
 
 	$("#menu-top-level-menu").append($("<li/>").append($("<a/>").text("new button")));
 	$("div#footer").prepend($("<div/>").attr("id", "dynamiccontent"));
+	$("div#dynamiccontent").append($("<input/>").attr("id", "textinput"));
 });
