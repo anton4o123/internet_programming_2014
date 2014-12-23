@@ -36,4 +36,15 @@ $(document).ready(function() {
 	$.ajax("http://jsonplaceholder.typicode.com/posts", {
 		method: "GET"
 	}).then(processResponse, handleError);
+
+	var checkForText = function() {
+		var name = $("input#textinput").val();
+		
+		if(!name) {
+			alert("you must enter text");
+			return;
+		}
+		$("input#textinput").val("");
+	};
+	$("button#addbutton").click(checkForText);
 });
