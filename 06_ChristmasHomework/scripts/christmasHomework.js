@@ -19,8 +19,15 @@ $(document).ready(function() {
 	}
 	function appendToList(list, post) {
 		var newElement = $("<li/>");
+		var newButton = $("<button/>");
+
 		newElement.text(post.title);
-		list.append(newElement);
+		newButton.text("X");
+
+		newButton.click(function() {
+			alert("deleting");
+		});
+		list.append(newElement.add(newButton));
 	}
 	function processResponse(response) {
 		var list = $("ul#posts");
