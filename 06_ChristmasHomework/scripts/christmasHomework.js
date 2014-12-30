@@ -49,6 +49,12 @@ $(document).ready(function() {
 			userId: 1,
 			title: name,
 			body: ''
+		}).then(function(data) {
+			$.ajax("http://jsonplaceholder.typicode.com/posts/" + data.id, {
+				method: "GET"
+			}).then(function(data) {
+				appendToList($("#posts"), data);
+			});
 		});
 	};
 	$("button#addbutton").click(checkForText);
