@@ -76,4 +76,6 @@ $(document).ready(function() {
 		});
 	};
 	$("button#addbutton").click(checkForText);
+
+	$("#posts").before("<input/>");
 });
