@@ -77,5 +77,18 @@ $(document).ready(function() {
 	};
 	$("button#addbutton").click(checkForText);
 
-	$("#posts").before("<input/>");
+	var processNewResponse = function(response) {
+		$.each(response, function() {
+			appendToList($("ul#posts"), this);
+		});
+	};
+
+	$("#posts").before($("<input/>").attr("id", "specialInput"));
+	$("#specialInput").change(function() {
+		var input = $("#specialInput").val();
+
+		$.ajax("http://jsonplaceholder.typicode.com/posts?userId=" + input, {
+			method: "GET"
+		}).then(processNewResponse, handleError);
+	});
 });
