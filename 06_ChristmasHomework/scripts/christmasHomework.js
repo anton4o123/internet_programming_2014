@@ -87,6 +87,8 @@ $(document).ready(function() {
 	$("#specialInput").change(function() {
 		var input = $("#specialInput").val();
 
+		$("ul#posts li").remove();
+		$("ul#posts button").remove();
 		$.ajax("http://jsonplaceholder.typicode.com/posts?userId=" + input, {
 			method: "GET"
 		}).then(processNewResponse, handleError);
