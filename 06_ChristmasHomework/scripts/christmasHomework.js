@@ -25,8 +25,19 @@ $(document).ready(function() {
 		newButton.text("X");
 
 		newButton.click(function() {
-			alert("deleting");
+			if(confirm("deleting")) {
+				$.ajax({
+					url: "http://jsonplaceholder.typicode.com/posts/" + post.id,
+					type: "DELETE",
+					success: function() {
+						$(".post-" + post.id).remove();
+					}
+				});
+			}
 		});
+
+		newElement.attr("class", "post-" + post.id);
+		newButton.attr("class", "post-" + post.id);
 		list.append(newElement.add(newButton));
 	}
 	function processResponse(response) {
