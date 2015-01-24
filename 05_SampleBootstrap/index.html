@@ -9,6 +9,12 @@
 	<body>
 		<div class=container>
 			<div class="row">
+				<label class="sr-only" for="inputHelpBlock">Input with help text</label>
+				<input type="text" id="inputHelpBlock" class="form-control" aria-descibedby="helpBlock">
+				<span id="helpBlock" class="help-block">A block of help text that breaks onto a new line and may extend beyond one line</span>
+			</div>
+
+			<div class="row">
 				<div class="col-md-offset-4 col-md-4">
 					<form class="form-inline">
 						<div class="form-group">
@@ -16,7 +22,7 @@
 							<div class="input-group">
 								<div class="input-group has-success has-feedback">
 								<div class="input-group-addon">$</div>
-								<input type="email" class="form-control" id="exampleInputAmount1" placeholder="Enter amount" aria-describedly="inputGroupSuccess3Status">
+								<input type="email" class="form-control" id="exampleInputAmount1" placeholder="Enter amount" aria-describedby="inputGroupSuccess3Status">
 								<span class="glyphicon glyphicon-ok-sign form-control-feedback" aria-hidden="true"></span>
 								<span id="inputGroupSuccess3Status" class="sr-only">(success)</span>
 							</div>
