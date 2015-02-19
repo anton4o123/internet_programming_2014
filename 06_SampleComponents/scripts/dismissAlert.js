@@ -3,6 +3,8 @@ $(document).ready(function() {
 
 	$(document).on("click",
 		"[data-dismiss-sample='alert']", function(event) {
-		$(event.target.closest(".alert")).fadeOut("slow");
+		$(event.target.closest(".alert")).fadeOut("slow", function() {
+			alert("element removed");
+		});
 	});
 });
