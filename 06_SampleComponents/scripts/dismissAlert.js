@@ -3,7 +3,7 @@ $(document).ready(function() {
 
 	$(document).on("click",
 		"[data-dismiss-sample='alert']", function(event) {
-		$(event.target.closest(".alert")).fadeOut("slow", function() {
+		$(event.target.closest(".alert")).slideUp("slow", function() {
 			$(this).remove();
 		});
 	});
