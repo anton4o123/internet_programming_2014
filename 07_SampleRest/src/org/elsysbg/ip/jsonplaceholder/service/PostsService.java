@@ -3,6 +3,10 @@ package org.elsysbg.ip.jsonplaceholder.service;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.ws.rs.DELETE;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+
 import org.elsysbg.ip.jsonplaceholder.model.Post;
 
 public class PostsService {
@@ -34,7 +38,9 @@ public class PostsService {
 		fromDb.setBody(post.getBody());
 		return fromDb;
 	}
-	public void deletePost(long postId) {
+	@DELETE
+	@Path("/{postId}")
+	public void deletePost(@PathParam("postId") long postId) {
 		final Post toBeDeleted = getPost(postId);
 		posts.remove(toBeDeleted);
 	}
