@@ -28,10 +28,11 @@ public class PostsService {
 		return post;
 	}
 	public Post updatePost(long postId, Post post) {
-		post.setId(postId);
-		deletePost(post.getId());
-		posts.add(post);
-		return post;
+		final Post fromDb = getPost(postId);
+		
+		fromDb.setTitle(post.getTitle());
+		fromDb.setBody(post.getBody());
+		return fromDb;
 	}
 	public void deletePost(long postId) {
 		final Post toBeDeleted = getPost(postId);
